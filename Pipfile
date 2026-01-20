@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+mkdocs = "~=1.5"
+mkdocs-material = {extras = ["imaging"], version = "~=9.4"}
+mkdocs-git-revision-date-localized-plugin = "~=1.2"
+mkdocs-git-authors-plugin = "~=0.8"
+mkdocs-macros-plugin = "~=1.0"
+jieba = "~=0.42"
+mkdocs-rss-plugin = "*"
+mkdocs-glightbox = "*"
+
+[dev-packages]
+ruff = "~=0.1"
+
+[requires]
+python_version = "3.12"

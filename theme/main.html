@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="{{ config.theme.language | default('en') }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    {% if page.meta and page.meta.description %}
+      <meta name="description" content="{{ page.meta.description }}" />
+    {% elif config.site_description %}
+      <meta name="description" content="{{ config.site_description }}" />
+    {% endif %}
+    {% if page.meta and page.meta.author %}
+      <meta name="author" content="{{ page.meta.author }}" />
+    {% elif config.site_author %}
+      <meta name="author" content="{{ config.site_author }}" />
+    {% endif %}
+    {% if page.canonical_url %}
+      <link rel="canonical" href="{{ page.canonical_url }}" />
+    {% endif %}
+    {% if config.site_url %}
+      <meta property="og:url" content="{{ page.canonical_url }}" />
+    {% endif %}
+    {% if page.meta and page.meta.title %}
+      <title>{{ page.meta.title }}</title>
+      <meta property="og:title" content="{{ page.meta.title }}" />
+      <meta name="twitter:title" content="{{ page.meta.title }}" />
+    {% elif page.title and not page.is_homepage %}
+      <title>{{ page.title | striptags }} - {{ config.site_name }}</title>
+      <meta property="og:title" content="{{ page.title | striptags }}" />
+      <meta name="twitter:title" content="{{ page.title | striptags }}" />
+    {% else %}
+      <title>{{ config.site_name }}</title>
+      <meta property="og:title" content="{{ config.site_name }}" />
+      <meta name="twitter:title" content="{{ config.site_name }}" />
+    {% endif %}
+    {% if page.meta and page.meta.description %}
+      <meta property="og:description" content="{{ page.meta.description }}" />
+      <meta name="twitter:description" content="{{ page.meta.description }}" />
+    {% elif config.site_description %}
+      <meta property="og:description" content="{{ config.site_description }}" />
+      <meta name="twitter:description" content="{{ config.site_description }}" />
+    {% endif %}
+    {% if config.site_url %}
+      <meta property="og:site_name" content="{{ config.site_name }}" />
+      <meta name="twitter:site" content="@bitcoinguides" />
+    {% endif %}
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {% if config.theme.favicon %}
+      <link rel="icon" href="{{ config.theme.favicon }}" />
+    {% endif %}
+    <script>
+      __md_scope=new URL("{{ config.site_url | default('/') }}",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+    </script>
+    {% block htmltitle %}
+      {% include "partials/title.html" %}
+    {% endblock %}
+    {% block styles %}
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.css' | url }}" />
+      {% if config.extra_css %}
+        {% for path in config.extra_css %}
+          <link rel="stylesheet" href="{{ path | url }}" />
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+    {% block libs %}
+      <script src="{{ 'assets/javascripts/bundle.js' | url }}"></script>
+    {% endblock %}
+    {% block fonts %}
+      {% include "partials/fonts.html" %}
+    {% endblock %}
+    {% if config.theme.palette %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+  </head>
+  <body dir="{{ config.theme.direction | default('ltr') }}">
+    {% set features = config.theme.features or [] %}
+    {% if not features %}
+      {% set features = config.theme.palette or [] %}
+    {% endif %}
+    {% if features %}
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off" />
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off" />
+      {% if features | selectattr("code.copy") %}
+        <input class="md-toggle" data-md-toggle="copy" type="checkbox" id="__copy" autocomplete="off" />
+      {% endif %}
+      {% if features | selectattr("code.annotate") %}
+        <input class="md-toggle" data-md-toggle="announce" type="checkbox" id="__announce" autocomplete="off" />
+      {% endif %}
+    {% endif %}
+    {% if config.theme.palette %}
+      {% for palette in config.theme.palette %}
+        {% set primary = palette.primary or config.theme.primary | default("indigo") %}
+        {% set accent = palette.accent or config.theme.accent | default("indigo") %}
+        <input
+          class="md-option"
+          data-md-color-media="{{ palette.media }}"
+          data-md-color-scheme="{{ palette.scheme | default('default') }}"
+          data-md-color-primary="{{ primary }}"
+          data-md-color-accent="{{ accent }}"
+          {% if palette.toggle %}
+            data-md-color-toggle="{{ palette.toggle.name }}"
+          {% endif %}
+          aria-hidden="true"
+          type="radio"
+          name="__palette"
+          id="__palette_{{ loop.index }}"
+        />
+      {% endfor %}
+    {% endif %}
+    {% if not config.theme.palette %}
+      {% set primary = config.theme.primary | default("indigo") %}
+      {% set accent = config.theme.accent | default("indigo") %}
+      <input
+        class="md-option"
+        data-md-color-primary="{{ primary }}"
+        data-md-color-accent="{{ accent }}"
+        aria-hidden="true"
+        type="radio"
+        name="__palette"
+        id="__palette_1"
+      />
+    {% endif %}
+    {% block hero %}
+      {% include "partials/header.html" %}
+    {% endblock %}
+    <div class="md-container" data-md-component="container">
+      {% block site_nav %}
+        {% include "partials/nav.html" %}
+      {% endblock %}
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          {% block content %}
+            {% include "partials/content.html" %}
+          {% endblock %}
+        </div>
+        {% if page.meta %}
+          {% include "partials/source.html" %}
+        {% endif %}
+        {% block disqus %}
+        {% endblock %}
+      </main>
+      {% block footer %}
+        {% include "partials/footer.html" %}
+      {% endblock %}
+    </div>
+    {% block config %}
+      <script id="__config" type="application/json">
+        {{ config | tojson }}
+      </script>
+    {% endblock %}
+    {% if features | selectattr("announce.dismiss") %}
+      {% include "partials/javascripts/announce.html" %}
+    {% endif %}
+    {% block scripts %}
+      {% include "partials/javascripts/base.html" %}
+      {% if config.extra_javascript %}
+        {% for path in config.extra_javascript %}
+          <script src="{{ path | url }}"></script>
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+  </body>
+</html>

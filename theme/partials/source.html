@@ -1,0 +1,22 @@
+{% if page.meta.sources %}
+<div class="sources-section">
+  <h3>Sources</h3>
+  {% if page.meta.sources is number %}
+    <p>This content was synthesized from <strong>{{ page.meta.sources }} sources</strong>{% if page.meta.date_range %} covering {{ page.meta.date_range }}{% endif %}.</p>
+  {% elif page.meta.sources is iterable %}
+    <ul>
+      {% for source in page.meta.sources %}
+      <li class="source-item">
+        <a href="{{ source.url }}" class="source-title" target="_blank" rel="noopener">{{ source.title }}</a>
+        {% if source.date %}
+        <span class="source-date">({{ source.date }})</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if page.meta.last_updated %}
+  <p class="last-updated"><small>Last updated: {{ page.meta.last_updated }}</small></p>
+  {% endif %}
+</div>
+{% endif %}

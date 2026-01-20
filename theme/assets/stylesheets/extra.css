@@ -1,0 +1,130 @@
+/* Bitcoin Guides Custom Styles */
+
+:root {
+  --md-primary-fg-color: #f7931a;  /* Bitcoin Orange */
+  --md-primary-fg-color--light: #ffb84d;
+  --md-primary-fg-color--dark: #cc7a15;
+  --md-accent-fg-color: #ff8c00;   /* Dark Orange */
+  --md-accent-fg-color--transparent: rgba(247, 147, 26, 0.1);
+  --md-code-bg-color: rgba(247, 147, 26, 0.05);
+  --md-code-fg-color: #cc7a15;
+}
+
+/* Bitcoin-specific color scheme */
+[data-md-color-scheme="default"] {
+  --md-default-fg-color: #1a1a1a;
+  --md-default-fg-color--light: #2a2a2a;
+  --md-default-fg-color--lighter: #3a3a3a;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-fg-color: #f5f5f5;
+  --md-default-fg-color--light: #e5e5e5;
+  --md-default-fg-color--lighter: #d5d5d5;
+}
+
+/* Custom content type indicators */
+.content-type-summary::before {
+  content: "📄 Summary";
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.content-type-synthesized::before {
+  content: "📚 Synthesized Guide";
+  background: #f3e5f5;
+  color: #7b1fa2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.content-type-comparison::before {
+  content: "⚖️ Product Comparison";
+  background: #e8f5e8;
+  color: #388e3c;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* Source attribution styling */
+.sources-section {
+  border-top: 1px solid var(--md-default-fg-color--lighter);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.sources-section h3 {
+  color: var(--md-default-fg-color--light);
+  font-size: 1.1em;
+  margin-bottom: 1rem;
+}
+
+.source-item {
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+}
+
+.source-title {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+}
+
+.source-title:hover {
+  text-decoration: underline;
+}
+
+.source-date {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+}
+
+/* Product comparison tables */
+.product-comparison {
+  margin: 2rem 0;
+}
+
+.product-comparison th,
+.product-comparison td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.product-comparison th {
+  background: var(--md-primary-fg-color--transparent);
+  font-weight: 600;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star-rating {
+  color: #ffc107;
+  font-size: 1.2em;
+}
+
+/* Responsive design improvements */
+@media screen and (max-width: 76.1875em) {
+  .product-comparison {
+    font-size: 0.9em;
+  }
+
+  .product-comparison th,
+  .product-comparison td {
+    padding: 8px 4px;
+  }
+}
