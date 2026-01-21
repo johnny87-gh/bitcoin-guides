@@ -3,8 +3,8 @@ site_description: Your central Bitcoin resource to understand and use Bitcoin sa
 site_author: Bitcoin Guides Team
 site_url: https://bitcoin-guides.org
 
-repo_name: bitcoin-guides/bitcoin-guides
-repo_url: https://github.com/bitcoin-guides/bitcoin-guides
+repo_name: johnny87-gh/bitcoin-guides
+repo_url: https://github.com/johnny87-gh/bitcoin-guides
 
 copyright: Copyright &copy; 2025 Bitcoin Guides.
 
@@ -80,40 +80,47 @@ nav:
   - Basics:
     - What is Bitcoin?: basics/what-is-bitcoin.md
     - Getting Started: basics/getting-started.md
-    - How Bitcoin Works: basics/how-bitcoin-works.md
-  - Wallets:
-    - Wallet Guide: wallets/wallet-guide.md
-    - Hardware Wallets: wallets/hardware-wallets.md
-    - Software Wallets: wallets/software-wallets.md
-  - Exchanges:
-    - Exchange Guide: exchanges/exchange-guide.md
-    - Centralized Exchanges: exchanges/centralized-exchanges.md
-    - Decentralized Exchanges: exchanges/decentralized-exchanges.md
-  - Security:
-    - Best Practices: security/best-practices.md
-    - Cold Storage: security/cold-storage.md
-    - Privacy: security/privacy.md
-  - Lightning:
-    - Lightning Network: lightning/lightning-network.md
-    - Lightning Wallets: lightning/lightning-wallets.md
-  - Tools:
-    - Block Explorers: tools/block-explorers.md
-    - Analytics Tools: tools/analytics-tools.md
-  - Mining:
-    - Mining Guide: mining/mining-guide.md
-    - Mining Hardware: mining/hardware.md
-  - News:
-    - Recent Developments: news/recent-developments.md
-  - Guides:
-    - Advanced Tutorials: guides/advanced-tutorials.md
+    - Bitcoin History: basics/bitcoin-history.md
+    - Education Hub: basics/education-hub.md
+    - Calculators & Utilities: basics/calculators-utilities.md
+    - Block Explorers: basics/block-explorers.md
+    - Regulatory & Compliance: basics/regulatory-compliance.md
+  - Buy:
+    - KYC Exchanges: buy/kyc-exchanges.md
+    - P2P Platforms: buy/p2p-platforms.md
+    - Bitcoin ATMs: buy/bitcoin-atms.md
+    - Tools for Investors: buy/tools-investors.md
+  - Secure:
+    - Hardware Wallets: secure/hardware-wallets.md
+    - Software Wallets: secure/software-wallets.md
+    - Alternative Wallets: secure/alternative-wallets.md
+    - Seed Storage Solutions: secure/seed-storage.md
+    - Security Best Practices: secure/security-best-practices.md
+    - Inheritance & Estate Planning: secure/inheritance-planning.md
+  - Spend:
+    - Where to Spend Bitcoin: spend/where-spend.md
+    - Privacy & Infrastructure: spend/privacy-infrastructure.md
+    - Merchant Tools: spend/merchant-tools.md
+    - Bitcoin for Business: spend/bitcoin-business.md
+    - Financial Services: spend/financial-services.md
+  - Advanced:
+    - Run a Full Node: advanced/full-node.md
+    - Bitcoin Mining: advanced/bitcoin-mining.md
+    - Privacy & Mixing: advanced/privacy-mixing.md
+    - Lightning Network: advanced/lightning-network.md
+    - Other Layer 2 Solutions: advanced/layer2-solutions.md
+  - Community:
+    - Bitcoin Communities: community/bitcoin-communities.md
+    - Bitcoin Media: community/bitcoin-media.md
+    - Contributing to Bitcoin: community/contributing.md
 
 extra:
   homepage: /
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/bitcoin-guides/bitcoin-guides
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/bitcoinguides
+      link: https://github.com/johnny87-gh/bitcoin-guides
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/bitcoin_guides_
   generator: false
 
 extra_css:

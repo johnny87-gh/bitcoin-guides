@@ -20,9 +20,9 @@ Ready to begin your Bitcoin journey? Start with our [Getting Started Guide](basi
 
 ## Need Help?
 
-- Browse our [documentation](basics/) for detailed guides
-- Check out [wallet recommendations](wallets/) to store your Bitcoin
-- Learn about [security best practices](security/) to protect your funds
+- Browse our [Basics](basics/) for detailed guides
+- Check out [Secure](secure/) to store your Bitcoin safely
+- Learn about [security best practices](secure/security-best-practices.md) to protect your funds
 
 ---
 

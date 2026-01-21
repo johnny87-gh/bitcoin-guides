@@ -32,7 +32,7 @@ Your wallet is where you'll store your Bitcoin. Different types offer different 
 - **Ledger Nano S Plus**: Affordable, supports many cryptocurrencies
 - **Trezor Model One**: Open-source, strong security features
 
-See our complete [Wallet Guide](../wallets/wallet-guide.md) for detailed comparisons.
+See our complete [Wallet Guide](../secure/software-wallets.md) for detailed comparisons.
 
 ## Step 3: Acquire Your First Bitcoin
 
@@ -86,8 +86,8 @@ See our complete [Wallet Guide](../wallets/wallet-guide.md) for detailed compari
 ## Next Steps
 
 Once you're comfortable with the basics:
-1. Learn about [Lightning Network](../lightning/lightning-network.md)
-2. Explore [mining](../mining/mining-guide.md) if interested
-3. Check out our [security guide](../security/best-practices.md)
+1. Learn about [Lightning Network](../advanced/lightning-network.md)
+2. Explore [mining](../advanced/bitcoin-mining.md) if interested
+3. Check out our [security guide](../secure/security-best-practices.md)
 
 Remember: Bitcoin is a journey of continuous learning. Take it one step at a time, and always prioritize security.
