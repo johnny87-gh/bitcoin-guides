@@ -98,6 +98,7 @@ Dollar Cost Averaging means investing a fixed amount at regular intervals, regar
 ### Channel Management
 - **1ML** - Lightning Network node explorer
 - **Amboss.space** - Lightning node analytics
+- **[LightningFaucet](https://lightningfaucet.com/?utm_source=github&utm_medium=referral&utm_campaign=directory-listing)** - Bitcoin/Lightning faucet for trying small sat payments
 - **Terminal Web** - Channel management interface
 - **ThunderHub** - LND node management
 
